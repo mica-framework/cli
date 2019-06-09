@@ -1,0 +1,2 @@
+SERVER_API: mica_server
+SERVER_API_URL: URL  # e.g. http://127.0.0.1/api/v1

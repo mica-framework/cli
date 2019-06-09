@@ -1,0 +1,89 @@
+# ================
+# STARTUP - QUESTIONS
+# ================
+startup:
+  title: "What would you like to do?"
+  questions:
+    - question: "Run the framework client"
+      module: "client"
+    - question: "Install and setup the framework"
+      module: "installer"
+    - question: "Configure the framework installation"
+      module: "manager"
+    - question: "Exit the Application"
+      module: "exit"
+
+
+# ================
+# CLIENT - QUESTIONS
+# ================
+client_menu:
+  title: "MiCA - Client Menu"
+  questions:
+    - question: "List all available attacks"
+      module: "list"
+    - question: "Show running attacks"
+      module: "show"
+    - question: "Exit"
+      module: "exit"
+
+client_attack_list:
+  title: "Choose an attack which you would like to simulate!"
+  questions: #None
+  module: "victims"
+
+client_attack_list_empty:
+  title: "Oh no...! We don't have a single attack! Please check the MiCA-Server and the Attack-Build Process!"
+  questions:
+    - question: "Go to menu"
+      module: "client_menu"
+    - question: "Exit"
+      module: "exit"
+
+client_victim_list:
+  title: "Select one or multiple victims for the simulation!"
+  questions: #None
+  module: "check_attack"
+
+client_victim_list_empty:
+  title: "Oh no...! We don't have a single victim! Please check the MiCA-Agents!"
+  questions:
+    - question: "Go to menu"
+      module: "client_menu"
+    - question: "Exit"
+      module: "exit"
+
+client_check_attack:
+  title: "Are all configurations correct? Do you like to run the Attack?"
+  questions:
+    - question: "Yes"
+      module: "run"
+    - question: "Change attack configuration"
+      module: "list"
+    - question: "Change victims configuration"
+      module: "victims"
+
+client_sent_attack:
+  title: "Success! Sent the attacks to the Victims!"
+  questions:
+    - question: "Go to menu"
+      module: "client_menu"
+    - question: "Start a new attack"
+      module: "list"
+    - question: "Exit"
+      module: "exit"
+
+# ================
+# INSTALLER - QUESTIONS
+# ================
+installer_menu:
+  title: "What would you like to setup?"
+  questions:
+    - questions: "MiCA - Server"
+      module: "server"
+    - questions: "MiCA - CLI"
+      module: "cli"
+    - questions: "MiCA - Agent"
+      mdoule: "agent"
+    - question: "Exit"
+      module: "exit"
