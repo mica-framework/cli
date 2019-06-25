@@ -25,3 +25,6 @@ $ pip install -r requirements.txt
 # 4 - Run the cli
 $ python3 mica-cli.py
 ```
+
+## License
+This project is licensed under the terms of the MIT license. See the [LICENSE](https://raw.githubusercontent.com/mica-framework/cli/master/LICENSE) file.
