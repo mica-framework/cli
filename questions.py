@@ -79,7 +79,18 @@ def _get_module_by_answer(topic, answer):
     return None
 
 
-def list(topic, optional_questions=None, clear_console=False):
+def ask(topic, optional_questions=None, clear_console=False):
+    # check if we have a "selection_type" which is multiple or if
+    # we need to use the default "list" function
+    yml = _load_yml()
+    yml_topic = yml[topic]
+    if 'selection_type' in yml_topic and yml_topic['selection_type'] == 'multiple':
+        return _select(topic, optional_questions, clear_console)
+    else:
+        return _list(topic, optional_questions, clear_console)
+
+
+def _list(topic, optional_questions=None, clear_console=False):
     if clear_console:
         _clear_console()
 
@@ -91,7 +102,7 @@ def list(topic, optional_questions=None, clear_console=False):
     return module, selection
 
 
-def select(topic, optional_questions=None, clear_console=False):
+def _select(topic, optional_questions=None, clear_console=False):
     if clear_console:
         _clear_console()
 
