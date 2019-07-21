@@ -1,89 +1,75 @@
 # ================
-# STARTUP - QUESTIONS
+# GENERAL - QUESTIONS
 # ================
 startup:
   title: "What would you like to do?"
   questions:
     - question: "Run the framework client"
       module: "client"
-    - question: "Install and setup the framework"
-      module: "installer"
-    - question: "Configure the framework installation"
-      module: "manager"
     - question: "Exit the Application"
       module: "exit"
-
+      
+failure:
+  title: "Oh no...! There was an error! Please check the MiCA-Server Connection and the Attack-Build Process!"
+  questions:
+    - question: "Go to main menu"
+      module: "startup"
+    - question: "Exit"
+      module: "exit"
 
 # ================
 # CLIENT - QUESTIONS
 # ================
-client_menu:
+client:
   title: "MiCA - Client Menu"
   questions:
     - question: "List all available attacks"
-      module: "list"
-    - question: "Show running attacks"
-      module: "show"
+      module: "list_attacks"
     - question: "Exit"
       module: "exit"
 
-client_attack_list:
+list_attacks:
   title: "Choose an attack which you would like to simulate!"
   questions: #None
-  module: "victims"
+  module: "list_victims"
 
-client_attack_list_empty:
-  title: "Oh no...! We don't have a single attack! Please check the MiCA-Server and the Attack-Build Process!"
-  questions:
-    - question: "Go to menu"
-      module: "client_menu"
-    - question: "Exit"
-      module: "exit"
-
-client_victim_list:
+list_victims:
   title: "Select one or multiple victims for the simulation!"
   questions: #None
   module: "check_attack"
+  selection_type: "multiple"
 
-client_victim_list_empty:
-  title: "Oh no...! We don't have a single victim! Please check the MiCA-Agents!"
-  questions:
-    - question: "Go to menu"
-      module: "client_menu"
-    - question: "Exit"
-      module: "exit"
-
-client_check_attack:
+check_attack:
   title: "Are all configurations correct? Do you like to run the Attack?"
   questions:
     - question: "Yes"
-      module: "run"
+      module: "execute_attack"
     - question: "Change attack configuration"
-      module: "list"
+      module: "list_attacks"
     - question: "Change victims configuration"
-      module: "victims"
+      module: "list_victims"
 
-client_sent_attack:
+execute_attack:
   title: "Success! Sent the attacks to the Victims!"
   questions:
-    - question: "Go to menu"
-      module: "client_menu"
+    - question: "Go to the Attack-Menu"
+      module: "client"
     - question: "Start a new attack"
-      module: "list"
+      module: "list_attacks"
     - question: "Exit"
       module: "exit"
 
 # ================
 # INSTALLER - QUESTIONS
 # ================
-installer_menu:
-  title: "What would you like to setup?"
-  questions:
-    - questions: "MiCA - Server"
-      module: "server"
-    - questions: "MiCA - CLI"
-      module: "cli"
-    - questions: "MiCA - Agent"
-      mdoule: "agent"
-    - question: "Exit"
-      module: "exit"
+#installer_menu:
+#  title: "What would you like to setup?"
+#  questions:
+#    - questions: "MiCA - Server"
+#      module: "server"
+#    - questions: "MiCA - CLI"
+#      module: "cli"
+#    - questions: "MiCA - Agent"
+#      mdoule: "agent"
+#    - question: "Exit"
+#      module: "exit"

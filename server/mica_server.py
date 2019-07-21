@@ -39,6 +39,7 @@ def run_attack(attack_name, victim_list):
         'attack': attack_name,
         'victims': victim_list
     }
+    print(data)
 
     response = requests.post(BASE_URL + "/attack", json=data)
     if response.status_code != 200:
