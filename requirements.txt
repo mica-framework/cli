@@ -4,7 +4,7 @@ Pygments==2.3.1
 certifi==2019.3.9
 chardet==3.0.4
 idna==2.8
-pip==19.0.3
+pip==19.2
 prompt-toolkit==1.0.14
 pyfiglet==0.8.post1
 regex==2019.4.14
