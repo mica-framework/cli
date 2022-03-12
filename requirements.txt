@@ -11,5 +11,5 @@ regex==2019.4.14
 requests==2.21.0
 setuptools==40.8.0
 six==1.12.0
-urllib3==1.24.2
+urllib3==1.26.5
 wcwidth==0.1.7
